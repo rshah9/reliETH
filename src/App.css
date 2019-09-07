@@ -1,7 +1,6 @@
 
 
 .App-logo {
-    /*animation: App-logo-spin infinite 20s linear;*/
     height: 20vmin;
     pointer-events: none;
     display: flex;
@@ -22,8 +21,6 @@
     background-color: #bfe8fb;
     font-size: calc(10px + 2vmin);
     color: white;
-    border-color: #bfe8fb;
-    border-style: none dashed none none;
 }
 
 #main-wrapper{
