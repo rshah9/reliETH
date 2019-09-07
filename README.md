@@ -2,9 +2,13 @@
 This is a repo for ethBoston Hackathon  Disaster Relief Project
 9.06.2019
 
-## Authors:
+### Authors:
+nighthawk24@gmail.com
+rgene2@gmail.com
+tommy.cox@protonmail.com
+williamlopezc@gmail.com
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
