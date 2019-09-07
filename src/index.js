@@ -15,32 +15,32 @@ import * as serviceWorker from './serviceWorker';
 const routing = (
     <Router>
         <div>
-            {/*<ul>*/}
-                {/*<li>*/}
-                    {/*<NavLink exact activeClassName="active" to="/">*/}
-                        {/*Home*/}
-                    {/*</NavLink>*/}
-                {/*</li>*/}
-                {/*<li>*/}
-                    {/*<NavLink activeClassName="active" to="/login">*/}
-                        {/*Login*/}
-                    {/*</NavLink>*/}
-                {/*</li>*/}
-                {/*<li>*/}
-                    {/*<NavLink activeClassName="active" to="/dashboard">*/}
-                        {/*Dashboard*/}
-                    {/*</NavLink>*/}
-                {/*</li>*/}
-                {/*<li>*/}
-                    {/*<NavLink activeClassName="active" to="/transfer">*/}
-                        {/*Transfer*/}
-                    {/*</NavLink>*/}
-                {/*</li>*/}
-            {/*</ul>*/}
-            {/*<hr />*/}
+            <ul>
+                <li>
+                    <NavLink exact activeClassName="active" to="/">
+                        Home
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink activeClassName="active" to="/login">
+                        Login
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink activeClassName="active" to="/dashboard">
+                        Dashboard
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink activeClassName="active" to="/transfer">
+                        Transfer
+                    </NavLink>
+                </li>
+            </ul>
+            <hr />
 
             <Switch>
-                <Route path="/" component={App} />
+                <Route exact path="/" component={App} />
                 <Route path="/login" component={Login} />
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/transfer" component={Transfer} />
