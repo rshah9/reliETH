@@ -2,7 +2,7 @@
 
 import  React from 'react';
 
-class transfer extends React.Component {
+class Transfer extends React.Component {
     render() {
         return (
             <div>
@@ -11,4 +11,4 @@ class transfer extends React.Component {
         )
     }
 }
-export default transfer;
+export default Transfer;
