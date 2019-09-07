@@ -34,6 +34,16 @@
     font-size: calc(10px + 2vmin);
     color: white;
 }
+
+#dashboard-wrapper {
+    background-color: #bfe8fb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    font-size: calc(10px + 2vmin);
+}
+
 .App-link {
     color: #d6d6d6;
 }
