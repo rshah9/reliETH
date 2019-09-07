@@ -1,13 +1,10 @@
-// TODO add login component here
-
-
 import  React from 'react';
 
 class Login extends React.Component {
     render() {
         return (
             <div>
-                <h1>login page</h1>
+                <h1>Login Page</h1>
             </div>
         )
     }
