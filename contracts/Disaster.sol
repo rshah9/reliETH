@@ -13,7 +13,7 @@ contract Disaster is Escrow {
         string memory _name,
         string memory _description,
         string memory _location
-      ) public {
+    ) public {
         name = _name;
         description = _description;
         location = _location;

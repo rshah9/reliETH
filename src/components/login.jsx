@@ -1,4 +1,4 @@
-import  React from 'react';
+import React from 'react';
 import Squarelink from 'squarelink';
 
 import Container from "@material-ui/core/Container";
