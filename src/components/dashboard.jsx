@@ -17,6 +17,18 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
 import InputAdornment from "@material-ui/core/InputAdornment";
 
+import web3 from '../web3';
+import contract from "truffle-contract";
+
+import ReliethABI from "../abis/Relieth";
+import DisasterABI from "../abis/Disaster";
+
+const Relieth = contract(ReliethABI);
+const Disaster = contract(DisasterABI);
+
+Relieth.setProvider(web3.currentProvider);
+Disaster.setProvider(web3.currentProvider);
+
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
@@ -26,6 +38,7 @@ class Dashboard extends React.Component {
             showSuccess: false,
             showFailed: false,
             amount: 0,
+            disasters: []
         };
         this.handleOpenOne = this.handleOpenOne.bind(this);
         this.handleCloseConfirmOne = this.handleCloseConfirmOne.bind(this);
@@ -35,6 +48,21 @@ class Dashboard extends React.Component {
         this.handleCloseExitTwo = this.handleCloseExitTwo.bind(this);
         this.handleCloseSnackbarSuccess = this.handleCloseSnackbarSuccess.bind(this);
         this.handleCloseSnackbarFailed = this.handleCloseSnackbarFailed.bind(this);
+    }
+
+    async componentDidMount() {
+        const relieth = await Relieth.deployed();
+        const disasterAddresses = await relieth.getDisasters();
+        
+        disasterAddresses.forEach(async address => {
+            const disaster = await Disaster.at(address);
+            this.state.disasters.push({
+                name: await disaster.name(),
+                description: await disaster.description(),
+                location: await disaster.location(),
+            });
+        });
+        console.log(this.state.disasters);
     }
 
     handleCloseExitOne() {
