@@ -6,16 +6,17 @@ contract Relieth {
     Disaster[] disasters;
 
     function createDisaster(
-        string memory name,
-        string memory description,
-        string memory location
-      ) public returns (Disaster) {
+        string memory _name,
+        string memory _description,
+        string memory _location,
+        address payable _beneficiary
+    ) public returns (Disaster disaster) {
         Disaster disaster = new Disaster(
-            name,
-            description,
-            location
+            _name,
+            _description,
+            _location,
+            _beneficiary
         );
-
         disasters.push(disaster);
 
         return disaster;
