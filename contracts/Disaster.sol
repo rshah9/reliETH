@@ -21,7 +21,7 @@ contract Disaster is RefundEscrow {
     }
 
     /**
-     * @dev Track how much has been contributed by a user.
+     * @dev Override deposit and track how much has been contributed by a user.
      */
     function deposit(address payee) public payable {
         contributionAmount[msg.sender] += msg.value;

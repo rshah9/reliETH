@@ -11,14 +11,12 @@ contract Relieth {
         string memory _location,
         address payable _beneficiary
     ) public returns (Disaster disaster) {
-        Disaster disaster = new Disaster(
+        disaster = new Disaster(
             _name,
             _description,
             _location,
             _beneficiary
         );
         disasters.push(disaster);
-
-        return disaster;
     }
 }
