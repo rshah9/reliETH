@@ -18,9 +18,12 @@ class Header extends Component {
                 style={{ color: this.props.muiTheme.palette.textColor }}
                 title="reliETH"
             >
-                <Toolbar>
+                <Toolbar style={{ textAlign: 'right' }}>
                     <Typography style={{color: 'white'}} variant="h6">
                         {this.state.title}
+                    </Typography>
+                    <Typography style={{ color: 'white', marginLeft: '1200px' }} variant="h6">
+                        {`Hello, ${this.props.name}`}
                     </Typography>
                 </Toolbar>
             </AppBar>

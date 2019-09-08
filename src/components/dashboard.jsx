@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import contract from "truffle-contract";
 import ReliethABI from "../abis/Relieth";
 import DisasterABI from "../abis/Disaster";
+import axios from 'axios';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -20,9 +21,22 @@ class Dashboard extends React.Component {
             web3: '',
             relieth: '',
             disaster: '',
+            name: '',
             imageOne: 'https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/AP-19248552550369-1567803265.jpg',
             imageTwo: 'https://info.umkc.edu/unews/wp-content/uploads/2019/09/566ee9cf1900002300789c85-620x400.jpg',
         };
+    }
+
+    componentDidMount() {
+        const searchPartOne = this.props.location.search.split('?access_token=');
+        const searchPartTwo = searchPartOne[1].split('&token_type=Bearer');
+        const search = searchPartTwo[0];
+        const url = `https://api.squarelink.com/user?access_token=${search}`;
+        axios.get(url).then((response) => {
+            const data = response.data;
+            const name = !!(data.given_name) ? (data.given_name) : data.email;
+            this.setState({name});
+        });
     }
 
     async componentDidUpdate(prevProps, prevState, snapshot) {
@@ -159,7 +173,7 @@ class Dashboard extends React.Component {
         const renderComponents = (this.state.disasterComponents.length !== 0) ? this.state.disasterComponents : defaultComponents;
         return (
             <>
-                <Header title={'Dashboard'}/>
+                <Header title={'Dashboard'} name={this.state.name}/>
                 <div id="dashboard-wrapper">
                     <main>
                         <Container maxWidth="lg" >
