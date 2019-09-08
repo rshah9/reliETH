@@ -5,7 +5,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {muiTheme} from "./themes";
 import Dashboard from "./components/dashboard";
-import Login from './components/login';
 import Transfer from "./components/transfer";
 import Error from "./components/error";
 import Home from "./components/home";
@@ -24,7 +23,6 @@ class App extends React.Component {
                 <Router>
                     <Switch>
                         <Route path="/" exact component={Home}/>
-                        <Route path="/login" render={(props) => <Login {...props}/>}/>
                         <Route path="/dashboard" render={(props) => <Dashboard {...props}/>}/>
                         <Route path="/transfer" render={(props) => <Transfer {...props}/>} />
                         <Route path="/error" render={(props) => <Error {...props}/>} />
