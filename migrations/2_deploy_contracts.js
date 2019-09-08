@@ -1,7 +1,7 @@
 const Relieth = artifacts.require("Relieth");
 
 module.exports = async function(deployer) {
-  deployer.deploy(Relieth);
+  await deployer.deploy(Relieth);
   const relieth = await Relieth.deployed();
 
   relieth.createDisaster(
