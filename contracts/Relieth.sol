@@ -3,7 +3,7 @@ pragma solidity ^0.5.0;
 import "./Disaster.sol";
 
 contract Relieth {
-    Disaster[] disasters;
+    Disaster[] private disasters;
 
     function createDisaster(
         string memory _name,
@@ -18,5 +18,9 @@ contract Relieth {
             _beneficiary
         );
         disasters.push(disaster);
+    }
+
+    function getDisasters() public view returns (Disaster[] memory) {
+        return disasters;
     }
 }
