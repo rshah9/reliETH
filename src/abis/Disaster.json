@@ -308,7 +308,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 63,
-        "sourceUnit": 643,
+        "sourceUnit": 652,
         "src": "25:65:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -322,10 +322,10 @@
               "id": 3,
               "name": "RefundEscrow",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 642,
+              "referencedDeclaration": 651,
               "src": "113:12:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RefundEscrow_$642",
+                "typeIdentifier": "t_contract$_RefundEscrow_$651",
                 "typeString": "contract RefundEscrow"
               }
             },
@@ -335,10 +335,10 @@
           }
         ],
         "contractDependencies": [
-          356,
-          388,
-          486,
-          642
+          365,
+          397,
+          495,
+          651
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -346,10 +346,10 @@
         "id": 62,
         "linearizedBaseContracts": [
           62,
-          642,
-          388,
-          486,
-          356
+          651,
+          397,
+          495,
+          365
         ],
         "name": "Disaster",
         "nodeType": "ContractDefinition",
@@ -651,10 +651,10 @@
                   "name": "RefundEscrow",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 642,
+                  "referencedDeclaration": 651,
                   "src": "428:12:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_RefundEscrow_$642_$",
+                    "typeIdentifier": "t_type$_t_contract$_RefundEscrow_$651_$",
                     "typeString": "type(contract RefundEscrow)"
                   }
                 },
@@ -826,7 +826,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 657,
+                          "referencedDeclaration": 666,
                           "src": "728:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -868,7 +868,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 657,
+                        "referencedDeclaration": 666,
                         "src": "743:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -930,7 +930,7 @@
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 682,
+                        "referencedDeclaration": 691,
                         "src": "762:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_Disaster_$62",
@@ -944,7 +944,7 @@
                       "lValueRequested": false,
                       "memberName": "deposit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 563,
+                      "referencedDeclaration": 572,
                       "src": "762:13:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
@@ -1021,7 +1021,7 @@
             "scope": 62,
             "src": "652:137:0",
             "stateMutability": "payable",
-            "superFunction": 563,
+            "superFunction": 572,
             "visibility": "public"
           }
         ],
@@ -1058,7 +1058,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 63,
-        "sourceUnit": 643,
+        "sourceUnit": 652,
         "src": "25:65:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1072,10 +1072,10 @@
               "id": 3,
               "name": "RefundEscrow",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 642,
+              "referencedDeclaration": 651,
               "src": "113:12:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_RefundEscrow_$642",
+                "typeIdentifier": "t_contract$_RefundEscrow_$651",
                 "typeString": "contract RefundEscrow"
               }
             },
@@ -1085,10 +1085,10 @@
           }
         ],
         "contractDependencies": [
-          356,
-          388,
-          486,
-          642
+          365,
+          397,
+          495,
+          651
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -1096,10 +1096,10 @@
         "id": 62,
         "linearizedBaseContracts": [
           62,
-          642,
-          388,
-          486,
-          356
+          651,
+          397,
+          495,
+          365
         ],
         "name": "Disaster",
         "nodeType": "ContractDefinition",
@@ -1401,10 +1401,10 @@
                   "name": "RefundEscrow",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 642,
+                  "referencedDeclaration": 651,
                   "src": "428:12:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_RefundEscrow_$642_$",
+                    "typeIdentifier": "t_type$_t_contract$_RefundEscrow_$651_$",
                     "typeString": "type(contract RefundEscrow)"
                   }
                 },
@@ -1576,7 +1576,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 657,
+                          "referencedDeclaration": 666,
                           "src": "728:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1618,7 +1618,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 657,
+                        "referencedDeclaration": 666,
                         "src": "743:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -1680,7 +1680,7 @@
                         "name": "super",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 682,
+                        "referencedDeclaration": 691,
                         "src": "762:5:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_super$_Disaster_$62",
@@ -1694,7 +1694,7 @@
                       "lValueRequested": false,
                       "memberName": "deposit",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 563,
+                      "referencedDeclaration": 572,
                       "src": "762:13:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
@@ -1771,7 +1771,7 @@
             "scope": 62,
             "src": "652:137:0",
             "stateMutability": "payable",
-            "superFunction": 563,
+            "superFunction": 572,
             "visibility": "public"
           }
         ],
@@ -1787,7 +1787,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-09-08T02:25:45.219Z",
+  "updatedAt": "2019-09-08T03:25:10.816Z",
   "devdoc": {
     "methods": {
       "beneficiary()": {
