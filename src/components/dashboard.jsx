@@ -7,8 +7,86 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogActions from "@material-ui/core/DialogActions";
+import Snackbar from "@material-ui/core/Snackbar";
+import SnackbarContentWrapper from "./snackbar";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import Input from "@material-ui/core/Input";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 class Dashboard extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            openOne: false,
+            openTwo: false,
+            showSuccess: false,
+            showFailed: false,
+            amount: 0,
+        };
+        this.handleOpenOne = this.handleOpenOne.bind(this);
+        this.handleCloseConfirmOne = this.handleCloseConfirmOne.bind(this);
+        this.handleCloseExitOne = this.handleCloseExitOne.bind(this);
+        this.handleOpenTwo = this.handleOpenTwo.bind(this);
+        this.handleCloseConfirmTwo = this.handleCloseConfirmTwo.bind(this);
+        this.handleCloseExitTwo = this.handleCloseExitTwo.bind(this);
+        this.handleCloseSnackbarSuccess = this.handleCloseSnackbarSuccess.bind(this);
+        this.handleCloseSnackbarFailed = this.handleCloseSnackbarFailed.bind(this);
+    }
+
+    handleCloseExitOne() {
+        this.setState( {
+            openOne: false,
+            amount: 0,
+        });
+    }
+
+    handleCloseConfirmOne() {
+        this.setState( {openOne: false}, () => {
+            this.setState( {showSuccess: true}, () => {
+                console.log('CLOSED CONFIRMED.')
+            });
+        });
+    }
+
+    handleOpenOne() {
+        this.setState({openOne: true});
+    }
+
+    handleCloseExitTwo() {
+        this.setState( {
+            openTwo: false,
+            amount: 0,
+        });
+    }
+
+    handleCloseConfirmTwo() {
+        this.setState( {openTwo: false}, () => {
+            this.setState( {showSuccess: true}, () => {
+                console.log('CLOSED CONFIRMED.')
+            });
+        });
+    }
+
+    handleOpenTwo() {
+        this.setState({openTwo: true});
+    }
+
+    handleCloseSnackbarSuccess() {
+        this.setState({showSuccess: false})
+    }
+
+    handleCloseSnackbarFailed() {
+        this.setState({showFailed: false})
+    }
+
+    handleAmountChange(amount) {
+        this.setState({amount});
+    }
+
     render() {
         return (
             <>
@@ -43,9 +121,35 @@ class Dashboard extends React.Component {
                                                             </Typography>
                                                         </CardContent>
                                                         <CardActions>
-                                                            <Button size="small" color="primary">
+                                                            <Button onClick={this.handleOpenOne} size="small" color="primary">
                                                                 Donate
                                                             </Button>
+                                                            <Dialog
+                                                                open={this.state.openOne}
+                                                                onClose={this.handleCloseExitOne}
+                                                                aria-labelledby="alert-dialog-title"
+                                                                aria-describedby="alert-dialog-description"
+                                                            >
+                                                                <DialogTitle id="alert-dialog-title">{"Donate"}</DialogTitle>
+                                                                <FormControl style={{ margin: '0 auto', width: '120px' }}>
+                                                                    <InputLabel htmlFor="adornment-amount">Amount</InputLabel>
+                                                                    <Input
+                                                                        id="adornment-amount"
+                                                                        type="number"
+                                                                        value={this.state.amount}
+                                                                        onChange={(event) => this.handleAmountChange(event.target.value)}
+                                                                        startAdornment={<InputAdornment position="start">ETH</InputAdornment>}
+                                                                    />
+                                                                </FormControl>
+                                                                <DialogActions>
+                                                                    <Button onClick={this.handleCloseExitOne} color="primary">
+                                                                        Exit
+                                                                    </Button>
+                                                                    <Button onClick={this.handleCloseConfirmOne} color="primary" autoFocus>
+                                                                        Confirm
+                                                                    </Button>
+                                                                </DialogActions>
+                                                            </Dialog>
                                                         </CardActions>
                                                     </Grid>
                                                 </Grid>
@@ -74,9 +178,35 @@ class Dashboard extends React.Component {
                                                             </Typography>
                                                         </CardContent>
                                                         <CardActions>
-                                                            <Button size="small" color="primary">
+                                                            <Button onClick={this.handleOpenTwo} size="small" color="primary">
                                                                 Donate
                                                             </Button>
+                                                            <Dialog
+                                                                open={this.state.openTwo}
+                                                                onClose={this.handleCloseExitTwo}
+                                                                aria-labelledby="alert-dialog-title"
+                                                                aria-describedby="alert-dialog-description"
+                                                            >
+                                                                <DialogTitle id="alert-dialog-title">{"Donate"}</DialogTitle>
+                                                                <FormControl style={{ margin: '0 auto', width: '120px' }}>
+                                                                    <InputLabel htmlFor="adornment-amount">Amount</InputLabel>
+                                                                    <Input
+                                                                        id="adornment-amount"
+                                                                        type="number"
+                                                                        value={this.state.amount}
+                                                                        onChange={(event) => this.handleAmountChange(event.target.value)}
+                                                                        startAdornment={<InputAdornment position="start">ETH</InputAdornment>}
+                                                                    />
+                                                                </FormControl>
+                                                                <DialogActions>
+                                                                    <Button onClick={this.handleCloseExitTwo} color="primary">
+                                                                        Exit
+                                                                    </Button>
+                                                                    <Button onClick={this.handleCloseConfirmTwo} color="primary" autoFocus>
+                                                                        Confirm
+                                                                    </Button>
+                                                                </DialogActions>
+                                                            </Dialog>
                                                         </CardActions>
                                                     </Grid>
                                                 </Grid>
@@ -88,6 +218,36 @@ class Dashboard extends React.Component {
                         </Container>
                     </main>
                 </div>
+                <Snackbar
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    }}
+                    open={this.state.showSuccess}
+                    autoHideDuration={6000}
+                    onClose={this.handleCloseSnackbarSuccess}
+                >
+                    <SnackbarContentWrapper
+                        onClose={this.handleCloseSnackbarSuccess}
+                        variant="success"
+                        message="Payment successful!"
+                    />
+                </Snackbar>
+                <Snackbar
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    }}
+                    open={this.state.showFailed}
+                    autoHideDuration={6000}
+                    onClose={this.handleCloseSnackbarFailed}
+                >
+                    <SnackbarContentWrapper
+                        onClose={this.handleCloseSnackbarFailed}
+                        variant="error"
+                        message="Payment failed. Please try again."
+                    />
+                </Snackbar>
             </>
         )
     }
