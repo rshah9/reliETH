@@ -7,7 +7,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {muiTheme} from "./themes";
 import Dashboard from "./components/dashboard";
-import Login from './components/login';
 import Transfer from "./components/transfer";
 import Error from "./components/error";
 import Home from "./components/home";
@@ -58,13 +57,11 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.state.web3);
         return (
-            < MuiThemeProvider muiTheme={getMuiTheme(this.state.selectedTheme)}>
+            <MuiThemeProvider muiTheme={getMuiTheme(this.state.selectedTheme)}>
                 <Router>
                     <Switch>
                         <Route path="/" exact render={(props) => <Home {...props} web3={this.state.web3}/>}/>
-                        <Route path="/login" render={(props) => <Login {...props} web3={this.state.web3}/>}/>
                         <Route path="/dashboard" render={(props) => <Dashboard  {...props} web3={this.state.web3}/>}/>
                         <Route path="/transfer" render={(props) => <Transfer {...props} web3={this.state.web3}/>} />
                         <Route path="/error" render={(props) => <Error {...props} web3={this.state.web3}/>} />
