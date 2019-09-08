@@ -1,5 +1,8 @@
 import  React from 'react';
 import logo from '../logo.png';
+import Button from '@material-ui/core/Button';
+import web3 from '../web3';
+
 class Home extends React.Component {
     render() {
         return (
