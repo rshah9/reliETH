@@ -102,7 +102,7 @@ class Dashboard extends React.Component {
                                     <Card style={{ marginBottom: '30px' }}>
                                         <Grid container spacing={2}>
                                             <Grid style={{ marginBottom: '-8px' }} item>
-                                                <img
+                                                <img alt="disaster"
                                                     style={{ height: '200px', width: '200px' }}
                                                     src={"https://9b16f79ca967fd0708d1-2713572fef44aa49ec323e813b06d2d9.ssl.cf2.rackcdn.com/1140x_a10-7_cTC/AP-19248552550369-1567803265.jpg"}
                                                 />
@@ -159,7 +159,7 @@ class Dashboard extends React.Component {
                                     <Card style={{ marginBottom: '30px' }}>
                                         <Grid container spacing={2}>
                                             <Grid style={{ marginBottom: '-8px' }} item>
-                                                <img
+                                                <img alt="disaster"
                                                     style={{ height: '200px', width: '200px' }}
                                                     src={"https://info.umkc.edu/unews/wp-content/uploads/2019/09/566ee9cf1900002300789c85-620x400.jpg"}
                                                 />
