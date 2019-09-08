@@ -58,6 +58,18 @@
 }
 
 /*error page */
-#wolves {
+.wolves {
     background-image: url("./images/wolves.jpg");
+}
+
+.error-message{
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #bfe8fb;
+    height: 10vh;
+    border-radius: 8px;
+    padding: 0 20px;
 }
