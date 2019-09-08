@@ -1,4 +1,4 @@
-import  React from 'react';
+import React from 'react';
 import Header from './header';
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -8,7 +8,40 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 
+import web3 from '../web3';
+import contract from "truffle-contract";
+
+import ReliethABI from "../abis/Relieth";
+import DisasterABI from "../abis/Disaster";
+
+const Relieth = contract(ReliethABI);
+const Disaster = contract(DisasterABI);
+
+Relieth.setProvider(web3.currentProvider);
+Disaster.setProvider(web3.currentProvider);
+
 class Dashboard extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            disasters: []
+        };
+    }
+
+    async componentDidMount() {
+        const relieth = await Relieth.deployed();
+        const disasterAddresses = await relieth.getDisasters();
+        
+        disasterAddresses.forEach(async address => {
+            const disaster = await Disaster.at(address);
+            this.state.disasters.push({
+                name: await disaster.name(),
+                description: await disaster.description(),
+                location: await disaster.location()
+            });
+        });
+        console.log(this.state.disasters);
+    }
 
     render() {
         return (

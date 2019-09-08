@@ -16,7 +16,6 @@ class Header extends Component {
         return (
             <AppBar
                 style={{ color: this.props.muiTheme.palette.textColor }}
-                showMenuIconButton={false}
                 title="reliETH"
             >
                 <Toolbar>
