@@ -1,3 +1,5 @@
+/* global artifacts web3 */
+
 const Relieth = artifacts.require("Relieth");
 
 module.exports = async (deployer) => {
